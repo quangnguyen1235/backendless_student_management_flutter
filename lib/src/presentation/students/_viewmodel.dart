@@ -69,10 +69,10 @@ class StudentsViewModel extends BaseViewModel {
     if (index != null) {
       if (index == -1) selectMajor = null;
       else{
-        if(selectMajor?.majorCode != majors[index].majorCode){
+        selectMajor = majors[index];
+        if(selectMajor?.majorCode != selectClassSubject?.major?.majorCode){
           selectClassSubject = null;
         }
-        selectMajor = majors[index];
       }
       notifyListeners();
     }
