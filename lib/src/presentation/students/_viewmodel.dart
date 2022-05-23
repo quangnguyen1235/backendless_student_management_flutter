@@ -79,15 +79,16 @@ class StudentsViewModel extends BaseViewModel {
   }
 
   onSelectClassSubject() async {
+    final temp = classSubjects.where((e) => selectMajor?.majorCode != null ? e.major?.majorCode == selectMajor?.majorCode : true).toList();
     final index = await bottomSheet(
       DialogSelectItems(
-        listItem: classSubjects.where((e) => selectMajor?.majorCode != null ? e.major?.majorCode == selectMajor?.majorCode : true).map((e) => e.className!).toList(),
+        listItem: temp.map((e) => e.className!).toList(),
         indexPage: selectClassSubject != null ? classSubjects.indexOf(selectClassSubject!) : -1,
       ),
     );
     if (index != null) {
       if (index == -1) selectClassSubject = null;
-      else selectClassSubject = classSubjects[index];
+      else selectClassSubject = temp[index];
       notifyListeners();
     }
   }
