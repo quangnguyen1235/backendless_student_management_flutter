@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       navigatorObservers: <NavigatorObserver>[MyApp.observer],
       locale: const Locale('vi', 'VN'),
       translationsKeys: AppTranslation.translations,
-      home: SplashScreen(),
+      home: StudentsScreen(),
       onGenerateRoute: Routers.generateRoute,
     );
   }

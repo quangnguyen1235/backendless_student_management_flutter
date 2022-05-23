@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:rxdart/rxdart.dart';
-
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import '../presentation.dart';
 
 abstract class BaseViewModel extends ChangeNotifier {
@@ -43,6 +43,15 @@ abstract class BaseViewModel extends ChangeNotifier {
   void unFocus() {
     FocusScope.of(context).unfocus();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+  }
+
+  Future<dynamic> bottomSheet(Widget child, {Color? barrierColor}) async {
+    return await showMaterialModalBottomSheet(
+      context: context,
+      builder: (context) => child,
+      backgroundColor: Colors.transparent,
+      barrierColor: barrierColor ?? Colors.black54,
+    );
   }
 
   Future<bool?> confirm(String title) async {

@@ -11,5 +11,5 @@ export 'student_dao.dart';
 abstract class Dao<T>{
   late String tableName;
   late AppDatabase appDatabase;
-  Future<List<T>> find({DataQueryBuilder? queryBuilder});
+  Future<List<T>> read({DataQueryBuilder? queryBuilder});
 }

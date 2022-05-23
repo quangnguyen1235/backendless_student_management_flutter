@@ -34,9 +34,9 @@ class AppDatabase {
     return _success == true;
   }
 
-  Future<List<Map<dynamic, dynamic>?>?> find(String tableName,
+  Future<List<Map<dynamic, dynamic>?>?> read(String tableName,
       {DataQueryBuilder? queryBuilder}) async {
-    logger.d('FIND: $tableName\nQUERY: $queryBuilder');
+    logger.d('FIND: $tableName\nQUERY: ${queryBuilder?.toJson()}');
     List<Map<dynamic, dynamic>?>? data;
     try {
       data = await Backendless.data.of(tableName).find(queryBuilder);

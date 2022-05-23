@@ -8,7 +8,7 @@ import '../presentation.dart';
 class SplashViewModel extends BaseViewModel {
 
   init() async {
-    AppDatabase().find('HS_LOP');
+    StudentDao().read();
   }
 
 }

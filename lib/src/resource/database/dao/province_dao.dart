@@ -16,11 +16,11 @@ class ProvinceDao implements Dao<ProvinceModel>{
   String tableName = 'HS_TINH';
 
   @override
-  Future<List<ProvinceModel>> find({DataQueryBuilder? queryBuilder}) async {
+  Future<List<ProvinceModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
     List<ProvinceModel> result = [];
     // TODO: implement find
-    final response = await appDatabase.find(tableName, queryBuilder: queryBuilder);
+    final response = await appDatabase.read(tableName, queryBuilder: queryBuilder);
     if(response != null){
       result = response.map((e) => ProvinceModel.fromJson(e)).toList();
     }

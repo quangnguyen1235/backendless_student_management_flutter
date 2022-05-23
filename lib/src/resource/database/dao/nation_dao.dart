@@ -16,11 +16,11 @@ class NationDao implements Dao<NationModel>{
   String tableName = 'HS_DANTOC';
 
   @override
-  Future<List<NationModel>> find({DataQueryBuilder? queryBuilder}) async {
+  Future<List<NationModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
     List<NationModel> result = [];
     // TODO: implement find
-    final response = await appDatabase.find(tableName, queryBuilder: queryBuilder);
+    final response = await appDatabase.read(tableName, queryBuilder: queryBuilder);
     if(response != null){
       result = response.map((e) => NationModel.fromJson(e)).toList();
     }

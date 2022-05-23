@@ -18,11 +18,11 @@ class MajorDao implements Dao<MajorModel>{
   String tableName = 'HS_NGANH';
 
   @override
-  Future<List<MajorModel>> find({DataQueryBuilder? queryBuilder}) async {
+  Future<List<MajorModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
     List<MajorModel> result = [];
     // TODO: implement find
-    final response = await appDatabase.find(tableName, queryBuilder: queryBuilder);
+    final response = await appDatabase.read(tableName, queryBuilder: queryBuilder);
     if(response != null){
       result = response.map((e) => MajorModel.fromJson(e)).toList();
     }

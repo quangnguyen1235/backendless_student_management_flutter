@@ -18,7 +18,7 @@ class WidgetOutlinedButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: action,
       style: ButtonStyle(
-          side: MaterialStateProperty.all(BorderSide(color: AppColors.primary)),
+          side: MaterialStateProperty.all(BorderSide(color: Colors.blue)),
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))),
           backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),

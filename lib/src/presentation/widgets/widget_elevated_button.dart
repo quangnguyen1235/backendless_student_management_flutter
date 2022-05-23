@@ -10,7 +10,11 @@ class WidgetElevatedButton extends StatelessWidget {
   final Color? color;
 
   const WidgetElevatedButton(
-      {required this.title, required this.action, this.width, this.textStyle, this.color});
+      {required this.title,
+      required this.action,
+      this.width,
+      this.textStyle,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,15 @@ class WidgetElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: action,
       style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0))),
-          backgroundColor: MaterialStateProperty.all<Color>(color ?? AppColors.primary)),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
+        backgroundColor:
+            MaterialStateProperty.all<Color>(color ?? AppColors.primary),
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(const EdgeInsets.all(12))
+      ),
       child: width != null
           ? SizedBox(
               width: width,

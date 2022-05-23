@@ -18,11 +18,11 @@ class ClassDao implements Dao<ClassModel>{
   String tableName = 'HS_LOP';
 
   @override
-  Future<List<ClassModel>> find({DataQueryBuilder? queryBuilder}) async {
+  Future<List<ClassModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
     List<ClassModel> result = [];
     // TODO: implement find
-    final response = await appDatabase.find(tableName, queryBuilder: queryBuilder);
+    final response = await appDatabase.read(tableName, queryBuilder: queryBuilder);
     if(response != null){
       result = response.map((e) => ClassModel.fromJson(e)).toList();
     }

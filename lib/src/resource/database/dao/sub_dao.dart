@@ -16,11 +16,11 @@ class SubDao implements Dao<SubModel>{
   String tableName = 'HS_DOITUONG';
 
   @override
-  Future<List<SubModel>> find({DataQueryBuilder? queryBuilder}) async {
+  Future<List<SubModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
     List<SubModel> result = [];
     // TODO: implement find
-    final response = await appDatabase.find(tableName, queryBuilder: queryBuilder);
+    final response = await appDatabase.read(tableName, queryBuilder: queryBuilder);
     if(response != null){
       result = response.map((e) => SubModel.fromJson(e)).toList();
     }

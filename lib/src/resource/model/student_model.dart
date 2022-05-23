@@ -62,7 +62,7 @@ class StudentModel {
     nation = json['MaDanToc'] != null ? NationModel.fromJson(json['MaDanToc']) : null;
     subject = json['MaDoiTuong'] != null ? SubModel.fromJson(json['MaDoiTuong']) : null;
     classSubject = json['MaLop'] != null ? ClassModel.fromJson(json['MaLop']) : null;
-    major = json['MajorModel'] != null ? MajorModel.fromJson(json['MaNganh']) : null;
+    major = json['MaNganh'] != null ? MajorModel.fromJson(json['MaNganh']) : null;
     province = json['MaTinh'] != null ? ProvinceModel.fromJson(json['MaTinh']) : null;
 
   }
@@ -74,12 +74,12 @@ class StudentModel {
   String? trainingSystem;
   String? studentCode;
   bool? isUnion;
-  int? birthDay;
+  DateTime? birthDay;
   dynamic fatherJob;
   String? address;
   String? motherName;
   dynamic motherJob;
-  int? identificationDate;
+  DateTime? identificationDate;
   String? fatherName;
   int? yearAttend;
   String? name;
@@ -97,12 +97,12 @@ class StudentModel {
     String? trainingSystem,
     String? studentCode,
     bool? isUnion,
-    int? birthDay,
+    DateTime? birthDay,
     dynamic fatherJob,
     String? address,
     String? motherName,
     dynamic motherJob,
-    int? identificationDate,
+    DateTime? identificationDate,
     String? fatherName,
     int? yearAttend,
     String? name,
