@@ -40,6 +40,8 @@ class StudentModel {
     this.classSubject,
     this.major,
     this.province,
+    this.unionDate,
+    this.unionPlace,
   });
 
   StudentModel.fromJson(dynamic json) {
@@ -64,7 +66,8 @@ class StudentModel {
     classSubject = json['MaLop'] != null ? ClassModel.fromJson(json['MaLop']) : null;
     major = json['MaNganh'] != null ? MajorModel.fromJson(json['MaNganh']) : null;
     province = json['MaTinh'] != null ? ProvinceModel.fromJson(json['MaTinh']) : null;
-
+    unionPlace = json['NoiKetNap'];
+    unionDate = json['NgayVD'];
   }
 
   String? identificationNumber;
@@ -89,6 +92,10 @@ class StudentModel {
   MajorModel? major;
   ProvinceModel? province;
 
+  DateTime? unionDate;
+  String? unionPlace;
+
+
   StudentModel copyWith({
     String? identificationNumber,
     String? placeOfBirth,
@@ -111,6 +118,8 @@ class StudentModel {
     ClassModel? classSubject,
     MajorModel? major,
     ProvinceModel? province,
+    DateTime? unionDate,
+    String? unionPlace,
   }) =>
       StudentModel(
         identificationNumber: identificationNumber ?? this.identificationNumber,
@@ -134,6 +143,8 @@ class StudentModel {
         classSubject: classSubject ?? this.classSubject,
         major: major ?? this.major,
         province: province ?? this.province,
+        unionDate: unionDate ?? this.unionDate,
+        unionPlace: unionPlace ?? this.unionPlace,
       );
 
   Map<String, dynamic> toJson() {
@@ -159,6 +170,8 @@ class StudentModel {
     map['MaLop'] = classSubject?.toJson();
     map['MaNganh'] = major?.toJson();
     map['MaTinh'] = province?.toJson();
+    map['NoiKetNap'] = unionPlace;
+    map['NgayVD'] = unionDate;
     return map;
   }
 }

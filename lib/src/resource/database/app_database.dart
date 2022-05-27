@@ -24,7 +24,7 @@ class AppDatabase {
       applicationId: APPLICATION_ID,
       androidApiKey: ANDROID_API_KEY,
       iosApiKey: IOS_API_KEY,
-      jsApiKey: JS_API_KEY,
+      // jsApiKey: JS_API_KEY,
       customDomain: BACKEND_DOMAIN,
     );
     final _success = await Backendless.isInitialized();

@@ -42,7 +42,7 @@ class StudentDetail extends StatelessWidget {
                 studentModel.studentCode!,
               ),
               buildField(
-                'Ngành',
+                'Khoa',
                 studentModel.major!.majorName!,
               ),
               buildField(
@@ -108,6 +108,17 @@ class StudentDetail extends StatelessWidget {
               buildField(
                 'Nghề nghiệp của mẹ',
                 studentModel.motherJob ?? "Không có",
+              ),
+              buildField(
+                'Ngày vào đoàn',
+                studentModel.unionDate != null
+                    ? AppUtils.convertDateTime2String(studentModel.unionDate,
+                        format: 'dd/MM/yyyy')
+                    : "",
+              ),
+              buildField(
+                'Nơi kết nạp',
+                studentModel.unionPlace != null ? studentModel.unionPlace! : '',
               ),
             ],
           ),
