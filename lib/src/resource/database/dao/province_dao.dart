@@ -10,7 +10,7 @@ class ProvinceDao implements Dao<ProvinceModel>{
   }
 
   @override
-  AppDatabase appDatabase = AppDatabase();
+  AppDataBase appDatabase = AppDataBase();
 
   @override
   String tableName = 'HS_TINH';

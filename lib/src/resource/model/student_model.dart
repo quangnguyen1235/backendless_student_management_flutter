@@ -18,6 +18,32 @@ import 'package:flutter_app/src/resource/model/model.dart';
 /// name : "Nguyễn Thị B"
 
 class StudentModel {
+
+  /// Các thuộc tính của sinh viên.
+  String? identificationNumber;
+  String? placeOfBirth;
+  String? identificationPlace;
+  bool? gender;
+  String? trainingSystem;
+  String? studentCode;
+  bool? isUnion;
+  DateTime? birthDay;
+  dynamic fatherJob;
+  String? address;
+  String? motherName;
+  dynamic motherJob;
+  DateTime? identificationDate;
+  String? fatherName;
+  int? yearAttend;
+  String? name;
+  NationModel? nation;
+  SubModel? subject;
+  ClassModel? classSubject;
+  MajorModel? major;
+  ProvinceModel? province;
+  DateTime? unionDate;
+  String? unionPlace;
+
   StudentModel({
     this.identificationNumber,
     this.placeOfBirth,
@@ -44,6 +70,9 @@ class StudentModel {
     this.unionPlace,
   });
 
+  /// Hàm khỏi tạo fromJson để convert đối tượng từ jsonObject
+  ///
+  /// Ví dụ: StudentModel student = StudentModel.fromJson(json);
   StudentModel.fromJson(dynamic json) {
     identificationNumber = json['SoCMND'];
     placeOfBirth = json['NoiSinh'];
@@ -70,32 +99,17 @@ class StudentModel {
     unionDate = json['NgayVD'];
   }
 
-  String? identificationNumber;
-  String? placeOfBirth;
-  String? identificationPlace;
-  bool? gender;
-  String? trainingSystem;
-  String? studentCode;
-  bool? isUnion;
-  DateTime? birthDay;
-  dynamic fatherJob;
-  String? address;
-  String? motherName;
-  dynamic motherJob;
-  DateTime? identificationDate;
-  String? fatherName;
-  int? yearAttend;
-  String? name;
-  NationModel? nation;
-  SubModel? subject;
-  ClassModel? classSubject;
-  MajorModel? major;
-  ProvinceModel? province;
-
-  DateTime? unionDate;
-  String? unionPlace;
-
-
+  /// Clone ra một đối tượng khác với những thuộc tính được thay đổi so với đối tượng ban đầu
+  ///
+  /// Ví dụ:
+  ///   StudentModel a = StudentModel(name: "Quang", studentCode: 1);
+  ///   StudentModel b = a.copyWith(name: "Trung");
+  ///
+  ///   a.name => Quang
+  ///   a.studentCode => 1
+  ///
+  ///   b.name => Trung
+  ///   b.studentCode => 1
   StudentModel copyWith({
     String? identificationNumber,
     String? placeOfBirth,
@@ -147,6 +161,16 @@ class StudentModel {
         unionPlace: unionPlace ?? this.unionPlace,
       );
 
+  /// Convert đối tượng sang dạng json
+  ///
+  /// Ví dụ:
+  ///   StudentModel a = StudentModel(name: "Quang", studentCode: 1);
+  ///
+  ///   a.toJson => {
+  ///     'MaSV' : 1,
+  ///     'HoTen' : "Quang"
+  ///   }
+  ///
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['SoCMND'] = identificationNumber;

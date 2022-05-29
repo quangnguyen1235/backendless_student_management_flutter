@@ -9,7 +9,15 @@ export 'province_dao.dart';
 export 'student_dao.dart';
 
 abstract class Dao<T>{
+  /// Tên bảng
   late String tableName;
-  late AppDatabase appDatabase;
+
+  /// Lớp AppDataBase để thao tác với CSDL
+  late AppDataBase appDatabase;
+
+  /// Phương thức này dùng để query CSDL trả ra List<T>
+  ///
+  /// Cac biến:
+  ///   queryBuilder: điều kiện đầu vào (có thể có hoặc không).
   Future<List<T>> read({DataQueryBuilder? queryBuilder});
 }

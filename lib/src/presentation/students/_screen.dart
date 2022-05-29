@@ -13,6 +13,8 @@ class StudentsScreen extends StatefulWidget {
 }
 
 class _StudentsScreenState extends State<StudentsScreen> {
+
+  /// viewModel đóng vai trò thao tác logic dữ liệu và cập nhật thông tin thay đổi thuộc tính trên màn hình
   late StudentsViewModel _viewModel;
 
   @override
@@ -85,6 +87,7 @@ class _StudentsScreenState extends State<StudentsScreen> {
     );
   }
 
+  /// Hiển thị danh sách sinh viên.
   Widget buildListData() {
     return Container(
       child: _viewModel.data.isEmpty
@@ -112,6 +115,8 @@ class _StudentsScreenState extends State<StudentsScreen> {
     );
   }
 
+
+  /// Build 2 ô để chọn ngành hoặc lớp
   Widget buildSelectField(String text, String? valueText,
       {bool isSelect = false, Function? onTap}) {
     return GestureDetector(

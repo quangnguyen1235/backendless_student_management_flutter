@@ -10,7 +10,7 @@ class SubDao implements Dao<SubModel>{
   }
 
   @override
-  AppDatabase appDatabase = AppDatabase();
+  AppDataBase appDatabase = AppDataBase();
 
   @override
   String tableName = 'HS_DOITUONG';

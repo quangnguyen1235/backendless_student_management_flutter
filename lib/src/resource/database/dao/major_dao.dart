@@ -12,7 +12,7 @@ class MajorDao implements Dao<MajorModel>{
   }
 
   @override
-  AppDatabase appDatabase = AppDatabase();
+  AppDataBase appDatabase = AppDataBase();
 
   @override
   String tableName = 'HS_NGANH';

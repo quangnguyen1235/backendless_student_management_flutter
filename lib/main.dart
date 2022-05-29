@@ -18,7 +18,7 @@ void main() async {
   await Firebase.initializeApp();
   await AppPrefs.initListener();
   await notificationInitialed();
-  await AppDatabase().initDataBase();
+  await AppDataBase().initDataBase();
   runApp(OverlaySupport(child: RestartWidget(child: App())));
 }
 

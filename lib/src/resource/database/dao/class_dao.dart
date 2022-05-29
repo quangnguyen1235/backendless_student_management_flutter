@@ -12,7 +12,7 @@ class ClassDao implements Dao<ClassModel>{
   }
 
   @override
-  AppDatabase appDatabase = AppDatabase();
+  AppDataBase appDatabase = AppDataBase();
 
   @override
   String tableName = 'HS_LOP';

@@ -10,7 +10,7 @@ class NationDao implements Dao<NationModel>{
   }
 
   @override
-  AppDatabase appDatabase = AppDatabase();
+  AppDataBase appDatabase = AppDataBase();
 
   @override
   String tableName = 'HS_DANTOC';

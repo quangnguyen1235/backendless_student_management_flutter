@@ -9,12 +9,19 @@ class StudentDao implements Dao<StudentModel>{
     return _instance ??= StudentDao._();
   }
 
-  @override
-  AppDatabase appDatabase = AppDatabase();
+  /// Khởi tạo AppDataBase để có thể thao tác với Backendless
 
+  @override
+  AppDataBase appDatabase = AppDataBase();
+
+  /// Gán tên của bảng trên Backendless vào đây.
   @override
   String tableName = 'HS_SINHVIEN';
 
+  /// Phương thức này dùng để query CSDL trả ra List<StudentModel>
+  ///
+  /// Cac biến:
+  ///   queryBuilder: điều kiện đầu vào (có thể có hoặc không).
   @override
   Future<List<StudentModel>> read({DataQueryBuilder? queryBuilder}) async {
     // TODO: implement find
